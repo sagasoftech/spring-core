@@ -1,0 +1,40 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- name property can be used instead of id -->
+	<!-- <bean name = "helloWorld" class = "com.examples.HelloWorld"> -->
+   <bean id = "helloWorld" class = "com.examples.HelloWorld">
+   		<!-- The set method must be available to add property. Else, fail as invalid setter method -->
+      <property name = "message" value = "Hello World!"/>
+   </bean>
+
+	<!-- constructor-args -->
+   <bean id = "constructorDemo1" class = "com.examples.ConstructorDemo">
+      <constructor-arg type="String" value="Hello world from constructor 1!"></constructor-arg>
+   </bean>
+   
+	<!-- constructor-args -->
+   <bean id = "constructorDemo2" class = "com.examples.ConstructorDemo">
+      <constructor-arg type="String" value="Hello world from constructor 2!"></constructor-arg>
+      <constructor-arg type="int" value="2"></constructor-arg>
+   </bean>
+   
+	<!-- lazy-init = true -->
+   <bean id = "lazyInitDemo1" class = "com.examples.LazyInitDemo" lazy-init = "true">
+      <constructor-arg type="String" value="Lazy load on!"></constructor-arg>
+   </bean>
+      
+   <!-- lazy-init = false -->
+   <bean id = "lazyInitDemo2" class = "com.examples.LazyInitDemo" lazy-init = "false">
+      <constructor-arg type="int" value="1"></constructor-arg>
+   </bean>
+   
+   <!-- init-method destroy-method -->
+   <bean id = "initDestroyMethodDemo" class = "com.examples.InitDestroyMethodDemo" init-method = "initMethod" destroy-method = "destroyMethod">
+   </bean>   
+   
+</beans>
