@@ -28,13 +28,13 @@
       <constructor-arg type="String" value="Lazy load on!"></constructor-arg>
    </bean>
       
-   <!-- lazy-init = false -->
+   <!-- lazy-init = false (Default)-->
    <bean id = "lazyInitDemo2" class = "com.examples.LazyInitDemo" lazy-init = "false">
       <constructor-arg type="int" value="1"></constructor-arg>
    </bean>
    
    <!-- init-method destroy-method -->
-   <bean id = "initDestroyMethodDemo" class = "com.examples.InitDestroyMethodDemo" init-method = "initMethod" destroy-method = "destroyMethod">
+   <bean id = "initDestroyMethod" class = "com.examples.InitDestroyMethod" init-method = "initMethod" destroy-method = "destroyMethod">
    </bean>   
    
 </beans>
