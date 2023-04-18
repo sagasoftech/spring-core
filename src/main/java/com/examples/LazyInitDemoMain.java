@@ -2,6 +2,9 @@ package com.examples;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import com.utils.FileResourcesUtils;
 
 public class LazyInitDemoMain {
 
@@ -9,7 +12,7 @@ public class LazyInitDemoMain {
 
 	public static void main( String[] args )
     {
-        context = new ClassPathXmlApplicationContext("Beans.xml");
+		context = new FileSystemXmlApplicationContext(FileResourcesUtils.getFileFromResourceAsStream("Beans.xml"));
         LazyInitDemo lazyInitDemo1 = context.getBean("lazyInitDemo1", LazyInitDemo.class);
         System.out.println("\n>>LazyInitDemo 1: ");
         System.out.println(lazyInitDemo1.getMessage());       

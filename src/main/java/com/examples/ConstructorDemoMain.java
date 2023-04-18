@@ -1,7 +1,9 @@
 package com.examples;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+
+import com.utils.FileResourcesUtils;
 
 public class ConstructorDemoMain {
 
@@ -9,7 +11,7 @@ public class ConstructorDemoMain {
 
 	public static void main( String[] args )
     {
-        context = new ClassPathXmlApplicationContext("Beans.xml");
+        context = new FileSystemXmlApplicationContext(FileResourcesUtils.getFileFromResourceAsStream("Beans.xml"));
         ConstructorDemo constructorDemo1 = context.getBean("constructorDemo1", ConstructorDemo.class);
         System.out.println("\n>>ConstructorDemo 1: ");
         System.out.println(constructorDemo1.getMessage());
