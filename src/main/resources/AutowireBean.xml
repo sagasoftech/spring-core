@@ -5,20 +5,27 @@
    xsi:schemaLocation = "http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-   <!-- Definition for textEditor bean -->
-   <bean id = "textEditor" class = "com.examples.autowire.TextEditor" autowire = "byName">
-      <property name = "name" value = "Generic Text Editor" />
-   </bean>
 
    <!-- Definition for spellChecker bean -->
    <bean id = "spellChecker" class = "com.examples.autowire.SpellChecker"></bean>
+   
+   
+   <!-- Definition for textEditor bean - byName -->
+   <bean id = "textEditor" class = "com.examples.autowire.TextEditor" autowire = "byName">
+      <property name = "name" value = "Generic Text Editor By Name" />
+   </bean>
 
 
-
-   <!-- Definition for textEditor bean -->
+   <!-- Definition for textEditor bean - byType -->
    <bean id = "textEditor2" class = "com.examples.autowire.TextEditor" autowire = "byType">
-      <property name = "name" value = "Generic Text Editor" />
+      <property name = "name" value = "Generic Text Editor By Type" />
    </bean>
    
+   
+   <!-- Definition for textEditor bean - constructor-->
+   <bean id = "textEditorConstructor" class = "com.examples.autowire.TextEditorConstructor" 
+      autowire = "constructor">
+      <constructor-arg value = "Generic Text By Constructor"/>
+   </bean>   
    
 </beans>
