@@ -19,4 +19,11 @@
       <property name="spellChecker" ref="spellChecker"/>
    </bean>
    
+   
+   <!-- Definition for textEditor bean using inner bean -->
+   <bean id = "textEditorInnerBean" class = "com.examples.dependencyinjection.TextEditor3">
+      <property name = "spellChecker3">
+         <bean id = "spellChecker3" class = "com.examples.dependencyinjection.SpellChecker"/>
+      </property>
+   </bean>   
 </beans>
