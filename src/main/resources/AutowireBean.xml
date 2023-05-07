@@ -14,4 +14,11 @@
    <bean id = "spellChecker" class = "com.examples.autowire.SpellChecker"></bean>
 
 
+
+   <!-- Definition for textEditor bean -->
+   <bean id = "textEditor2" class = "com.examples.autowire.TextEditor" autowire = "byType">
+      <property name = "name" value = "Generic Text Editor" />
+   </bean>
+   
+   
 </beans>
