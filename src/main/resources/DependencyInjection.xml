@@ -13,4 +13,10 @@
    <!-- Definition for spellChecker bean -->
    <bean id = "spellChecker" class = "com.examples.dependencyinjection.SpellChecker"></bean>
 
+
+   <!-- Definition for textEditor bean -->
+   <bean id = "textEditor2" class = "com.examples.dependencyinjection.TextEditor2">
+      <property name="spellChecker" ref="spellChecker"/>
+   </bean>
+   
 </beans>
