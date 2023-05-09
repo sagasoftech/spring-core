@@ -11,4 +11,13 @@
    <context:annotation-config/>
    <!-- bean definitions go here -->
 
+
+   <!-- Definition for student bean -->
+   <bean id = "student" class = "com.examples.annotation.Student">
+      <property name = "name" value = "Zara" />
+
+      <!-- try without passing age and check the result -->
+      <!-- property name = "age"  value = "11"-->
+   </bean>
+   
 </beans>
